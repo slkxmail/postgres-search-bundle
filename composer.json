@@ -1,5 +1,5 @@
 {
-    "name": "intaro/postgre-search-bundle",
+    "name": "intaro/postgres-search-bundle",
     "type": "symfony-bundle",
     "description": "Tools to use full-text search PostgreSQL in Doctrine.",
     "keywords": ["doctrine2", "symfony2", "search", "postgresql"],
@@ -17,7 +17,7 @@
         "doctrine/orm": ">=2.2.3"
     },
     "autoload": {
-        "psr-0": { "Intaro\\PostgresSearchBundle": "" }
+        "psr-0": { "Intaro\\PostgresSearchBundle\\": "" }
     },
     "target-dir": "Intaro/PostgresSearchBundle"
 }
