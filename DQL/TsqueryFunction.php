@@ -1,5 +1,5 @@
 <?php
-namespace Ddmaster\PostgreSearchBundle\DQL;
+namespace Intaro\PostgresSearchBundle\DQL;
 
 use Doctrine\ORM\Query\AST\Functions\FunctionNode;
 use Doctrine\ORM\Query\Lexer;
@@ -24,8 +24,8 @@ class TsqueryFunction extends FunctionNode
 
     public function getSql(\Doctrine\ORM\Query\SqlWalker $sqlWalker)
     {
-        return 
-        	$this->fieldName->dispatch($sqlWalker) . 
+        return
+        	$this->fieldName->dispatch($sqlWalker) .
             ' @@ to_tsquery(' . $this->queryString->dispatch($sqlWalker) . ')';
     }
 }
