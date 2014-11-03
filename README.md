@@ -47,7 +47,7 @@ public function registerBundles()
 /**
  * @var string
  *
- * @ORM\Column(name="search_fts", type="tsvector", nullable=true)
+ * @ORM\Column(name="search_fts", type="tsvector", options={"customSchemaOptions": {"searchFields":{"name", "genre"}}}, nullable=true)
  */
 protected $searchFts;
 ```

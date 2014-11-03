@@ -1,0 +1,5 @@
+services:
+    intaro_postgres_search.listener:
+        class: Intaro\PostgresSearchBundle\EventListener\SearchListener
+        tags:
+            - { name: doctrine.event_listener, event: onFlush }

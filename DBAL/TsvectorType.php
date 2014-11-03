@@ -33,10 +33,18 @@ class TsvectorType extends Type
 
     public function convertToDatabaseValue($value, AbstractPlatform $platform)
     {
-        if (is_array($value)) {
-            $value = implode(" ", $value);
-        }
+        $result = '';
 
-        return $value;
+        if (is_array($value)) {
+            foreach ($value as $item) {
+                if (is_array($item)) {
+                    $item = implode(' ', $item);
+                }
+                $result .= $item . ' ';
+            }
+        }
+        $result = trim($result);
+
+        return $result;
     }
 }
