@@ -25,7 +25,7 @@ class TsqueryFunction extends FunctionNode
     public function getSql(\Doctrine\ORM\Query\SqlWalker $sqlWalker)
     {
         return
-        	$this->fieldName->dispatch($sqlWalker) .
-            ' @@ to_tsquery(' . $this->queryString->dispatch($sqlWalker) . ')';
+            $this->fieldName->dispatch($sqlWalker) .
+            ' @@ plainto_tsquery(' . $this->queryString->dispatch($sqlWalker) . ')';
     }
 }
