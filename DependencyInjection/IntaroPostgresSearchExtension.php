@@ -37,6 +37,7 @@ class IntaroPostgresSearchExtension extends Extension implements PrependExtensio
                 'dql' => [
                     'string_functions' => [
                         'tsquery' => 'Intaro\PostgresSearchBundle\DQL\TsqueryFunction',
+                        'plainto_tsquery' => 'Intaro\PostgresSearchBundle\DQL\PlainToTsqueryFunction',
                         'tsrank' => 'Intaro\PostgresSearchBundle\DQL\TsrankFunction',
                         'tsheadline' => 'Intaro\PostgresSearchBundle\DQL\TsheadlineFunction'
                     ]

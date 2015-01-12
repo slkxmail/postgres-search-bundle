@@ -5,9 +5,9 @@ use Doctrine\ORM\Query\AST\Functions\FunctionNode;
 use Doctrine\ORM\Query\Lexer;
 
 /**
- * TsqueryFunction ::= "TSQUERY" "(" StringPrimary "," StringPrimary ")"
+ * TsqueryFunction ::= "PLAINTO_TSQUERY" "(" StringPrimary "," StringPrimary ")"
  */
-class TsqueryFunction extends FunctionNode
+class PlainToTsqueryFunction extends FunctionNode
 {
     public $fieldName = null;
     public $queryString = null;
@@ -26,6 +26,6 @@ class TsqueryFunction extends FunctionNode
     {
         return
             $this->fieldName->dispatch($sqlWalker) .
-            ' @@ to_tsquery(' . $this->queryString->dispatch($sqlWalker) . ')';
+            ' @@ plainto_tsquery(' . $this->queryString->dispatch($sqlWalker) . ')';
     }
 }
