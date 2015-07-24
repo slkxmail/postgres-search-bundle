@@ -60,7 +60,7 @@ $em = $this->getDoctrine()->getManager();
 $query = $em->createQuery(
     'SELECT b.id, sum(TSRANK(b.searchFts, :searchQuery)) as rank
         FROM DemoSearchBundle:Books b
-        WHERE TSQUERY( b.searchFts, :searchQuery ) = true
+        WHERE TSQUERY( b.searchFts, :searchQuery, \'simple\' ) = true
         GROUP BY b.id
         ORDER BY rank DESC')
     ->setParameter('searchQuery', $searchQuery)
