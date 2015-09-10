@@ -22,12 +22,12 @@ class SearchListener
                     continue;
                 }
 
-                $fieldMapping = $metadata->getFieldMapping($field)['options'];
-                if (!isset($fieldMapping['customSchemaOptions']['searchFields'])) {
+                $fieldMapping = $metadata->getFieldMapping($field);
+                if (!isset($fieldMapping['options']['customSchemaOptions']['searchFields'])) {
                     continue;
                 }
 
-                $searchFields = $fieldMapping['customSchemaOptions']['searchFields'];
+                $searchFields = $fieldMapping['options']['customSchemaOptions']['searchFields'];
                 $searchData = [];
                 foreach ($searchFields as $searchField) {
                     $getter = 'get' . ucfirst($searchField);
@@ -56,13 +56,13 @@ class SearchListener
                     continue;
                 }
 
-                $fieldMapping = $metadata->getFieldMapping($field)['options'];
-                if (!isset($fieldMapping['customSchemaOptions']['searchFields'])) {
+                $fieldMapping = $metadata->getFieldMapping($field);
+                if (!isset($fieldMapping['options']['customSchemaOptions']['searchFields'])) {
                     continue;
                 }
 
                 $updateNeeded = false;
-                $searchFields = $fieldMapping['customSchemaOptions']['searchFields'];
+                $searchFields = $fieldMapping['options']['customSchemaOptions']['searchFields'];
                 foreach ($changeSet as $fieldName => $value) {
                     if (in_array($fieldName, $searchFields)) {
                         $updateNeeded = true;
