@@ -63,8 +63,13 @@ class SearchListener
 
                 $updateNeeded = false;
                 $searchFields = $fieldMapping['options']['customSchemaOptions']['searchFields'];
+                if (isset($fieldMapping['options']['customSchemaOptions']['triggerRecompute'])) {
+                    $triggerRecompute = $fieldMapping['options']['customSchemaOptions']['triggerRecompute'];
+                } else {
+                    $triggerRecompute = [];
+                }
                 foreach ($changeSet as $fieldName => $value) {
-                    if (in_array($fieldName, $searchFields)) {
+                    if (in_array($fieldName, $searchFields) || in_array($fieldName, $triggerRecompute)) {
                         $updateNeeded = true;
                         break;
                     }
