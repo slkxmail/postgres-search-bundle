@@ -1,9 +1,9 @@
 {
-    "name": "intaro/postgres-search-bundle",
+    "name": "slkxmail/postgres-search-bundle",
     "type": "symfony-bundle",
     "description": "Tools to use full-text search PostgreSQL in Doctrine.",
-    "keywords": ["doctrine2", "symfony2", "search", "postgresql"],
-    "homepage": "https://github.com/ddmaster/PostgresSearchBundle",
+    "keywords": ["doctrine2", "symfony3", "search", "postgresql"],
+    "homepage": "https://github.com/slkxmail/postgres-search-bundle",
     "license": "MIT",
     "authors": [
         {
